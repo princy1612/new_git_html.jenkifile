@@ -1,6 +1,6 @@
 node {
     stage('Git checkout') { // for display purposes
-        git 'https://github.com/BushnevYuri/e2e-automation-pipeline.git'
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9be729f6-dd27-4cdd-a894-7f4b77b1c61e', url: 'https://github.com/princy1612/new_git_html.jenkifile.git']]])
     }
     stage('Smoke') {
         try {
